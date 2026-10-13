@@ -810,12 +810,290 @@ window.LECCIONES = [
       columnas: [{ k: "txt", nombre: "Oración", ph: "Escribe tu oración en inglés" }],
     },
   },
+
+  {
+    id: "l4",
+    numero: 4,
+    titulo: "Preguntas Wh-: what, when, where, who, how",
+    maestra: "Teacher Gaby Manzano",
+    resumen:
+      "Respuestas cortas y largas; las preguntas con what, when, where, who y how; las 7 preguntas que todo el que habla inglés debe saber (nombre, apellido, dirección, edad, cumpleaños…) y cómo contestarlas.",
+
+    pasos: [
+      {
+        id: "l4p1",
+        titulo: "Respuestas cortas y largas",
+        emoji: "✅",
+        teoria: [
+          { t: "p", x: "Las preguntas que ya sabes hacer (*Is he a doctor?*) se llaman ***yes/no questions*** porque solo se contestan **sí** o **no**." },
+          { t: "p", x: "En México contestamos «ajá» y en Saltillo «¡ok!», y hay que ver la cara de la persona para saber si es sí o no. En inglés **siempre** debes dar una respuesta **corta** o **larga**. Si en un examen contestas solo «ajá», te reprueban." },
+          {
+            t: "tabla",
+            cab: ["Pregunta", "Respuesta corta", "Respuesta larga"],
+            filas: [
+              ["{v|Is} {p|he} a doctor?", "Yes, {p|he} {v|is}.", "Yes, {p|he}'{v|s} a doctor."],
+              ["{v|Is} {p|she} a student?", "No, {p|she} {v|is}{n|n't}.", "No, {p|she} {v|is}{n|n't} a student."],
+              ["{v|Are} {p|you} an actor?", "Yes, {p|I} {v|am}.", "Yes, {p|I}'{v|m} very famous."],
+            ],
+          },
+          { t: "regla", x: "Respuesta corta con sí → **sin** contracción · Respuesta larga → **puedes** contraer" },
+          { t: "tip", x: "Nunca *Yes, he's*. Lo correcto es *Yes, he is*. Pero en la respuesta **larga** sí puedes: *Yes, he's a doctor*, *Yes, I'm very famous*." },
+          { t: "tip", x: "Cómo se forma **isn't**: en *is not* quitas la **o** de *not*, pones un apóstrofo ( ' ) y lo juntas: **is not → isn't**." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l4e01", tag: "preguntas", pregunta: "Is he a doctor? (Respuesta corta, **sí**)", opciones: ["Yes, he's.", "Yes, he is.", "Ajá."], correcta: 1, pista: "En la respuesta corta con sí no hay contracción.", explicacion: "*Yes, he is.* Nada de «ajá»: en inglés siempre se da una respuesta corta o larga." },
+          { tipo: "opcion", id: "l4e02", tag: "preguntas", pregunta: "Are you an actor? (Respuesta **larga**, sí)", opciones: ["Yes, I am.", "Yes, I'm very famous.", "Yes, I'm."], correcta: 1, pista: "La larga agrega información y puede llevar contracción.", explicacion: "*Yes, I'm very famous.* Es respuesta larga, así que puedes contraer: *I'm*." },
+          { tipo: "escribir", id: "l4e03", tag: "negativas", pregunta: "Contesta que **no** con contracción: Is she a student?", respuestas: ["no she isn't", "no she's not"], mostrar: "No, she isn't.", pista: "is not → isn't", explicacion: "*No, she isn't.* En el «no» sí se usa contracción." },
+          { tipo: "opcion", id: "l4e04", tag: "preguntas", pregunta: "¿Por qué se llaman ***yes/no questions***?", opciones: ["Porque empiezan con yes", "Porque solo se contestan sí o no", "Porque no tienen verbo"], correcta: 1, pista: "Piensa en cómo se contestan.", explicacion: "Se llaman así porque solo se contestan **yes** o **no**." },
+        ],
+      },
+      {
+        id: "l4p2",
+        titulo: "Las preguntas Wh-",
+        emoji: "❓",
+        teoria: [
+          { t: "p", x: "Las *yes/no questions* terminan la conversación. La maestra lo explicó así: si le preguntas a alguien «¿Te gusta el helado?», contesta «no» y se acabó la plática. Pero si preguntas «¿Cuál es tu sabor de helado favorito?», empieza la conversación." },
+          { t: "p", x: "Estas preguntas que piden **información** se llaman ***Wh- questions***, porque casi todas empiezan con las letras **W** y **H** (en inglés se dice «dabliu eich»)." },
+          {
+            t: "tabla",
+            cab: ["Inglés", "Suena como", "Español"],
+            filas: [
+              ["{w|What}", "juat", "qué / cuál"],
+              ["{w|When}", "juen", "cuándo"],
+              ["{w|Where}", "juer", "dónde"],
+              ["{w|Who}", "ju", "quién"],
+              ["{w|How}", "jau", "cómo / qué tan"],
+            ],
+          },
+          { t: "tip", x: "La **wh** suena casi como una **j** suave: «juat», «juen», «juer». **How** es al revés: tiene las mismas letras, pero primero la **h** y luego la **w**." },
+          { t: "tip", x: "Cuidado: **where** (dónde) suena casi igual que **we're** (nosotros somos/estamos), que ya conoces." },
+          { t: "p", x: "**How** tiene dos significados, según lo que va después:" },
+          {
+            t: "tabla",
+            cab: ["Si después va…", "How significa", "Ejemplo"],
+            filas: [
+              ["el verbo", "cómo", "{w|How} {v|is} your father? = ¿Cómo está tu papá?"],
+              ["un adjetivo", "qué tan", "{w|How} {w|big} {v|is} your house? = ¿Qué tan grande es tu casa?"],
+            ],
+          },
+          { t: "regla", x: "{w|Wh-} + {v|verbo} + {p|sujeto} … ?" },
+          { t: "p", x: "Estas preguntas **no** se contestan con sí o no: tienes que dar la información que te piden." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l4e05", tag: "wh", pregunta: "**Where** significa…", opciones: ["cuándo", "dónde", "quién"], correcta: 1, pista: "Suena como «juer», casi igual que we're.", explicacion: "**where** = dónde. **when** = cuándo. **who** = quién." },
+          { tipo: "opcion", id: "l4e06", tag: "wh", pregunta: "¿Cómo se dice **quién**?", opciones: ["what", "how", "who"], correcta: 2, pista: "Suena como «ju».", explicacion: "**who** = quién. *Who's your teacher?* = ¿Quién es tu maestra?" },
+          { tipo: "opcion", id: "l4e07", tag: "wh", pregunta: "*How big is your house?* significa…", opciones: ["¿Cómo es tu casa?", "¿Qué tan grande es tu casa?", "¿Dónde está tu casa?"], correcta: 1, pista: "Después de how va un adjetivo (big = grande).", explicacion: "**How + adjetivo** = qué tan. *How big* = qué tan grande." },
+          { tipo: "opcion", id: "l4e08", tag: "wh", pregunta: "*How is your father?* significa…", opciones: ["¿Cómo está tu papá?", "¿Qué tan alto es tu papá?", "¿Quién es tu papá?"], correcta: 0, pista: "Después de how va el verbo.", explicacion: "**How + verbo** = cómo. *How is your father?* = ¿Cómo está tu papá?" },
+          { tipo: "opcion", id: "l4e09", tag: "wh", pregunta: "¿Qué pregunta abre más la conversación?", opciones: ["Do you like ice cream? (¿Te gusta el helado?)", "What's your favorite ice cream? (¿Cuál es tu helado favorito?)"], correcta: 1, pista: "Una se contesta con sí o no; la otra pide información.", explicacion: "Las preguntas con **what** piden información y hacen que la plática siga." },
+          { tipo: "escribir", id: "l4e10", tag: "wh", pregunta: "Escribe en inglés: **cuándo**", respuestas: ["when"], pista: "Suena como «juen».", explicacion: "**when** = cuándo." },
+        ],
+      },
+      {
+        id: "l4p3",
+        titulo: "Preguntas que todos deben saber",
+        emoji: "🙋",
+        teoria: [
+          { t: "p", x: "La maestra dijo que estas preguntas las debe saber **todo el que habla inglés**. Apréndelas de memoria:" },
+          {
+            t: "tabla",
+            cab: ["Pregunta", "Forma corta", "Español"],
+            filas: [
+              ["{w|What} {v|is} your {w|name}?", "What's your name?", "¿Cuál es tu nombre? / ¿Cómo te llamas?"],
+              ["{w|What} {v|is} your {w|last name}?", "What's your last name?", "¿Cuál es tu apellido?"],
+              ["{w|What} {v|is} your {w|address}?", "What's your address?", "¿Cuál es tu dirección?"],
+              ["{w|How} {v|are} {p|you}?", "—", "¿Cómo estás?"],
+              ["{w|How} {w|old} {v|are} {p|you}?", "—", "¿Cuántos años tienes?"],
+              ["{w|When} {v|is} your {w|birthday}?", "When's your birthday?", "¿Cuándo es tu cumpleaños?"],
+              ["{w|Who} {v|is} your teacher?", "Who's your teacher?", "¿Quién es tu maestro / maestra?"],
+            ],
+          },
+          { t: "tip", x: "**What** significa «qué», pero en español no decimos «¿Qué es tu nombre?», sino «¿**Cuál** es tu nombre?». Por eso aquí *what* se traduce como **cuál**." },
+          { t: "tip", x: "Igual que *he is → he's*, aquí quitas la **i** de *is* y pones apóstrofo: **what is → what's**, **when is → when's**, **who is → who's**. Las dos formas son correctas." },
+          { t: "tip", x: "**How old are you?** literalmente es «¿Qué tan viejo eres?» (**old** = viejo). Así se pregunta la edad en inglés, aunque seas muy joven." },
+          { t: "p", x: "**Los nombres en Estados Unidos.** No se usan dos apellidos como en México: solo el del papá. Tienen tres partes:" },
+          {
+            t: "tabla",
+            cab: ["Inglés", "Español", "Ejemplo: Luis Fernando García"],
+            filas: [
+              ["{w|first name}", "primer nombre", "Luis"],
+              ["{w|middle name}", "segundo nombre", "Fernando"],
+              ["{w|last name}", "apellido", "García"],
+            ],
+          },
+          { t: "tip", x: "Esto es muy importante cuando llenas papeles para tu pasaporte, una visa o correspondencia con el extranjero." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l4e11", tag: "wh", pregunta: "*What's your name?* significa…", opciones: ["¿Qué es tu nombre?", "¿Cuál es tu nombre?", "¿Dónde está tu nombre?"], correcta: 1, pista: "En español no decimos «qué es tu nombre».", explicacion: "*What's your name?* = ¿Cuál es tu nombre? o ¿Cómo te llamas?" },
+          { tipo: "opcion", id: "l4e12", tag: "wh", pregunta: "¿Cómo preguntas **¿Cuántos años tienes?**", opciones: ["How many years are you?", "How old are you?", "What old are you?"], correcta: 1, pista: "Literalmente: «¿Qué tan viejo eres?».", explicacion: "*How old are you?* Hay que aprenderla de memoria." },
+          { tipo: "escribir", id: "l4e13", tag: "wh", pregunta: "Traduce: **¿Cuál es tu dirección?**", respuestas: ["what is your address", "what's your address"], mostrar: "What's your address?", pista: "Dirección = address.", explicacion: "*What's your address?* = *What is your address?*" },
+          { tipo: "escribir", id: "l4e14", tag: "wh", pregunta: "Traduce: **¿Cuándo es tu cumpleaños?**", respuestas: ["when is your birthday", "when's your birthday"], mostrar: "When's your birthday?", pista: "Cuándo = when. Cumpleaños = birthday.", explicacion: "*When's your birthday?* = *When is your birthday?*" },
+          { tipo: "ordenar", id: "l4e15", tag: "wh", pregunta: "Ordena: **¿Quién es tu maestra?**", palabras: ["Who", "is", "your", "teacher?"], pista: "Wh- + verbo + resto.", explicacion: "*Who is your teacher?* También: *Who's your teacher?*" },
+          { tipo: "opcion", id: "l4e16", tag: "vocabulario", pregunta: "En *Luis Fernando García*, ¿cuál es el **middle name**?", opciones: ["Luis", "Fernando", "García"], correcta: 1, pista: "middle = de en medio.", explicacion: "**first name** = Luis, **middle name** = Fernando, **last name** = García." },
+          { tipo: "opcion", id: "l4e17", tag: "vocabulario", pregunta: "**last name** significa…", opciones: ["último nombre", "apellido", "nombre de pila"], correcta: 1, pista: "En Estados Unidos es el apellido del papá.", explicacion: "**last name** = apellido. *What's your last name?* = ¿Cuál es tu apellido?" },
+        ],
+      },
+      {
+        id: "l4p4",
+        titulo: "Cómo contestarlas",
+        emoji: "💬",
+        teoria: [
+          { t: "p", x: "Depende de la situación. En una **oficina** contestas solo el dato: *What's your name?* → *Gabriela Manzano.* En una **fiesta**, cuando te presentan a alguien, contestas con oración completa: *My name is Gaby.*" },
+          {
+            t: "tabla",
+            cab: ["Pregunta", "Respuesta completa", "Español"],
+            filas: [
+              ["What's your name?", "My name {v|is} Carlos. / My name'{v|s} Carlos.", "Me llamo Carlos."],
+              ["What's your last name?", "My last name {v|is} García.", "Mi apellido es García."],
+              ["What's your address?", "{p|It}'{v|s} 254 Elm Street.", "Es Calle del Olmo 254."],
+              ["How are you?", "{p|I}'{v|m} {w|fine}, thank you.", "Estoy bien, gracias."],
+              ["How old are you?", "{p|I}'{v|m} twenty-one years {w|old}.", "Tengo 21 años."],
+              ["When's your birthday?", "{p|It}'{v|s} on February 26th.", "Es el 26 de febrero."],
+              ["Who's your teacher?", "My teacher {v|is} Mr. Luis García.", "Mi maestro es el señor Luis García."],
+            ],
+          },
+          { t: "p", x: "**Direcciones.** En inglés primero va el **número**, luego el **nombre** de la calle y al final la palabra **Street** (calle): *254 Elm Street* (Calle del Olmo 254; **elm** = olmo)." },
+          { t: "tip", x: "En papeles oficiales de México escribe tu dirección como siempre, o no te llegará el correo. Esto es para que entiendas las direcciones cuando las veas en inglés." },
+          { t: "extra", x: "Además de *Street* hay otros tipos de calle, y casi siempre se escriben abreviados: **Street (St.)** calle · **Avenue (Ave.)** avenida · **Boulevard (Blvd.)** bulevar · **Circle (Cir.)** glorieta o circuito · **Court (Ct.)** calle cerrada." },
+          { t: "p", x: "**La edad** siempre lleva ***years old***: *I'm twenty-one years old* (tengo 21 años), *I'm thirty years old* (tengo 30)." },
+          { t: "p", x: "**El cumpleaños** es una cosa, así que en oración completa usas **it**. Con un mes y un día, usas **on**:" },
+          { t: "regla", x: "{p|It}'{v|s} + {w|on} + mes + día con th" },
+          { t: "tip", x: "En inglés las fechas se dicen con números **ordinales** (primero, segundo, tercero…). Por eso a los números se les agrega **th**: 26 → **26th** (*twenty-sixth*, «vigésimo sexto»). *It's on February 26th.*" },
+          {
+            t: "tabla",
+            cab: ["Número", "Se escribe", "Se dice"],
+            filas: [
+              ["1", "1st", "first"],
+              ["2", "2nd", "second"],
+              ["3", "3rd", "third"],
+              ["4", "4th", "fourth"],
+              ["5", "5th", "fifth"],
+              ["21", "21st", "twenty-first"],
+              ["26", "26th", "twenty-sixth"],
+              ["28", "28th", "twenty-eighth"],
+            ],
+          },
+          { t: "tip", x: "Los que terminan en 1, 2 y 3 son especiales: **st**, **nd**, **rd**. Todos los demás llevan **th**." },
+          { t: "extra", x: "Los meses en inglés siempre van con mayúscula: **January** (enero), **February** (febrero), **March** (marzo), **April** (abril), **May** (mayo), **June** (junio), **July** (julio), **August** (agosto), **September** (septiembre), **October** (octubre), **November** (noviembre), **December** (diciembre)." },
+          { t: "tip", x: "Títulos: **Mr.** (señor), **Mrs.** (señora), **Miss** (señorita). *My teacher is Mr. García.*" },
+        ],
+        ejercicios: [
+          { tipo: "escribir", id: "l4e18", tag: "wh", pregunta: "Contesta con oración completa (usa el nombre **Carlos**): What's your name?", respuestas: ["my name is carlos", "my name's carlos", "i am carlos", "i'm carlos"], mostrar: "My name is Carlos.", pista: "My name + is + nombre.", explicacion: "*My name is Carlos.* o *My name's Carlos.*" },
+          { tipo: "opcion", id: "l4e19", tag: "wh", pregunta: "How old are you? (tienes 21 años)", opciones: ["I have twenty-one years.", "I'm twenty-one years old.", "I'm twenty-one old years."], correcta: 1, pista: "En inglés la edad se dice con el verbo to be y years old.", explicacion: "*I'm twenty-one years old.* En inglés no se dice «tengo» años: se usa **am** + **years old**." },
+          { tipo: "opcion", id: "l4e20", tag: "wh", pregunta: "When's your birthday? (26 de febrero)", opciones: ["It's on February 26th.", "It's in February 26.", "Is February 26th."], correcta: 0, pista: "It's + on + mes + día con th.", explicacion: "*It's on February 26th.* Con mes y día se usa **on**, y el día lleva **th**." },
+          { tipo: "opcion", id: "l4e21", tag: "vocabulario", pregunta: "¿Cuál dirección está escrita al estilo inglés?", opciones: ["Elm Street 254", "254 Elm Street", "Street Elm 254"], correcta: 1, pista: "Primero el número y Street al final.", explicacion: "*254 Elm Street.* Número, nombre de la calle y al final **Street**." },
+          { tipo: "opcion", id: "l4e22", tag: "vocabulario", pregunta: "¿Cómo se escribe **3** en una fecha? (el día 3)", opciones: ["3th", "3rd", "3nd"], correcta: 1, pista: "1, 2 y 3 son especiales: st, nd, rd.", explicacion: "**3rd** = *third* (tercero). 1st, 2nd, 3rd, y después todos con **th**." },
+          { tipo: "escribir", id: "l4e23", tag: "wh", pregunta: "Traduce: **Mi maestra es la señora López.**", respuestas: ["my teacher is mrs lopez", "my teacher's mrs lopez"], mostrar: "My teacher is Mrs. López.", pista: "Señora = Mrs.", explicacion: "*My teacher is Mrs. López.* **Mrs.** = señora, **Mr.** = señor, **Miss** = señorita." },
+        ],
+      },
+    ],
+
+    vocabulario: [
+      { id: "what", en: "what", es: "qué / cuál", pron: "juat", emoji: "❔", ej: "{w|What}'{v|s} your name?", ejEs: "¿Cuál es tu nombre?" },
+      { id: "when", en: "when", es: "cuándo", pron: "juen", emoji: "🗓️", ej: "{w|When}'{v|s} your birthday?", ejEs: "¿Cuándo es tu cumpleaños?" },
+      { id: "where", en: "where", es: "dónde", pron: "juer", emoji: "📍", ej: "{w|Where} {v|is} the school?", ejEs: "¿Dónde está la escuela?" },
+      { id: "who", en: "who", es: "quién", pron: "ju", emoji: "🧑", ej: "{w|Who}'{v|s} your teacher?", ejEs: "¿Quién es tu maestra?" },
+      { id: "how", en: "how", es: "cómo / qué tan", pron: "jau", emoji: "🤔", ej: "{w|How} {v|are} {p|you}?", ejEs: "¿Cómo estás?" },
+      { id: "name", en: "name", es: "nombre", pron: "néim", emoji: "🏷️", ej: "My name {v|is} Gaby.", ejEs: "Me llamo Gaby." },
+      { id: "first-name", en: "first name", es: "primer nombre", pron: "ferst néim", emoji: "1️⃣", ej: "My first name {v|is} Luis.", ejEs: "Mi primer nombre es Luis." },
+      { id: "middle-name", en: "middle name", es: "segundo nombre", pron: "mídel néim", emoji: "2️⃣", ej: "My middle name {v|is} Fernando.", ejEs: "Mi segundo nombre es Fernando." },
+      { id: "last-name", en: "last name", es: "apellido", pron: "last néim", emoji: "👪", ej: "My last name {v|is} García.", ejEs: "Mi apellido es García." },
+      { id: "address", en: "address", es: "dirección", pron: "ádres", emoji: "📬", ej: "{w|What}'{v|s} your address?", ejEs: "¿Cuál es tu dirección?" },
+      { id: "street", en: "street", es: "calle", pron: "strit", emoji: "🛣️", ej: "{p|It}'{v|s} 254 Elm Street.", ejEs: "Es Calle del Olmo 254." },
+      { id: "birthday", en: "birthday", es: "cumpleaños", pron: "bérzdei", emoji: "🎂", ej: "{p|It}'{v|s} on February 26th.", ejEs: "Es el 26 de febrero." },
+      { id: "fine", en: "fine", es: "bien", pron: "fain", emoji: "🙂", ej: "{p|I}'{v|m} fine, thank you.", ejEs: "Estoy bien, gracias." },
+      { id: "old", en: "old", es: "viejo (en la edad: años)", pron: "ould", emoji: "🧓", ej: "{p|I}'{v|m} twenty-one years old.", ejEs: "Tengo 21 años." },
+      { id: "years", en: "years", es: "años", pron: "iers", emoji: "⏳", ej: "{p|I}'{v|m} thirty years old.", ejEs: "Tengo 30 años." },
+      { id: "big", en: "big", es: "grande", pron: "big", emoji: "🐘", ej: "{w|How} big {v|is} your house?", ejEs: "¿Qué tan grande es tu casa?" },
+      { id: "your", en: "your", es: "tu / su (de usted)", pron: "ior", emoji: "👉", ej: "{w|What}'{v|s} your name?", ejEs: "¿Cómo te llamas?" },
+      { id: "february", en: "February", es: "febrero", pron: "fébruari", emoji: "📅", ej: "{p|It}'{v|s} on February 26th.", ejEs: "Es el 26 de febrero." },
+      { id: "mr", en: "Mr.", es: "señor", pron: "míster", emoji: "🎩", ej: "My teacher {v|is} Mr. García.", ejEs: "Mi maestro es el señor García." },
+      { id: "mrs", en: "Mrs.", es: "señora", pron: "mísis", emoji: "👒", ej: "My teacher {v|is} Mrs. López.", ejEs: "Mi maestra es la señora López." },
+      { id: "miss", en: "Miss", es: "señorita", pron: "mis", emoji: "🎀", ej: "{p|She} {v|is} Miss Ruiz.", ejEs: "Ella es la señorita Ruiz." },
+    ],
+
+    escuchar: {
+      dictado: [
+        { en: "What's your name?", es: "¿Cómo te llamas?" },
+        { en: "My name is Carlos.", es: "Me llamo Carlos." },
+        { en: "How old are you?", es: "¿Cuántos años tienes?" },
+        { en: "When's your birthday?", es: "¿Cuándo es tu cumpleaños?" },
+        { en: "Who's your teacher?", es: "¿Quién es tu maestra?" },
+        { en: "What's your address?", es: "¿Cuál es tu dirección?" },
+        { en: "How is your father?", es: "¿Cómo está tu papá?" },
+        { en: "Where is the school?", es: "¿Dónde está la escuela?" },
+        { en: "What's your last name?", es: "¿Cuál es tu apellido?" },
+      ],
+      pronunciar: [
+        { en: "{w|What}'{v|s} your name?", pron: "juats ior néim", es: "¿Cómo te llamas?" },
+        { en: "My name'{v|s} Gaby.", pron: "mai néims gábi", es: "Me llamo Gaby." },
+        { en: "{w|How} old {v|are} {p|you}?", pron: "jau ould ar iu", es: "¿Cuántos años tienes?" },
+        { en: "{p|I}'{v|m} twenty-one years old.", pron: "aim tuéni uan iers ould", es: "Tengo 21 años." },
+        { en: "{w|When}'{v|s} your birthday?", pron: "juens ior bérzdei", es: "¿Cuándo es tu cumpleaños?" },
+        { en: "{p|It}'{v|s} on February 26th.", pron: "its on fébruari tuéni sixz", es: "Es el 26 de febrero." },
+        { en: "{w|Who}'{v|s} your teacher?", pron: "jus ior tícher", es: "¿Quién es tu maestra?" },
+        { en: "{w|How} big {v|is} your house?", pron: "jau big is ior jaus", es: "¿Qué tan grande es tu casa?" },
+      ],
+      dialogo: {
+        titulo: "En la fiesta",
+        lineas: [
+          { quien: "Gaby", en: "Hello! {w|What}'{v|s} your name?", es: "¡Hola! ¿Cómo te llamas?" },
+          { quien: "Carlos", en: "My name'{v|s} Carlos.", es: "Me llamo Carlos." },
+          { quien: "Gaby", en: "{w|What}'{v|s} your last name?", es: "¿Cuál es tu apellido?" },
+          { quien: "Carlos", en: "My last name {v|is} Pérez.", es: "Mi apellido es Pérez." },
+          { quien: "Gaby", en: "{w|How} old {v|are} {p|you}?", es: "¿Cuántos años tienes?" },
+          { quien: "Carlos", en: "{p|I}'{v|m} twenty-one years old.", es: "Tengo 21 años." },
+          { quien: "Gaby", en: "{w|When}'{v|s} your birthday?", es: "¿Cuándo es tu cumpleaños?" },
+          { quien: "Carlos", en: "{p|It}'{v|s} on May 3rd.", es: "Es el 3 de mayo." },
+        ],
+        nuevas: [{ en: "May", es: "mayo" }],
+        preguntas: [
+          { tipo: "opcion", id: "l4d1", tag: "escucha", pregunta: "¿Cuál es el apellido de Carlos?", opciones: ["García", "Pérez", "López"], correcta: 1, pista: "Escucha la respuesta a *What's your last name?*", explicacion: "*My last name is Pérez.*" },
+          { tipo: "opcion", id: "l4d2", tag: "escucha", pregunta: "¿Cuántos años tiene Carlos?", opciones: ["21", "26", "30"], correcta: 0, pista: "Escucha: *I'm twenty-…*", explicacion: "*I'm twenty-one years old.* = Tengo 21 años." },
+          { tipo: "opcion", id: "l4d3", tag: "escucha", pregunta: "¿Cuándo es su cumpleaños?", opciones: ["26 de febrero", "3 de mayo", "1 de mayo"], correcta: 1, pista: "*third* = tercero.", explicacion: "*It's on May 3rd* (May third) = el 3 de mayo." },
+        ],
+      },
+    },
+
+    tarea: {
+      instrucciones:
+        "La tarea de la maestra: hazle estas preguntas a tu familia (hermanos, papás) y practíquenlas entre todos; enséñales a tus papás para que también contesten. Aquí escribe **tu** respuesta completa y la de **un familiar** (como te la dijo, en inglés). Si no quieres poner tu dirección real, invéntala.",
+      criterios:
+        "Para cada pregunta, el estudiante escribe su propia respuesta completa y la respuesta de un familiar, ambas en primera persona (My name is…, I'm … years old, It's on …). Revisa: My name is / My name's; My last name is; dirección al estilo inglés (número, nombre de la calle, Street); edad con I'm/I am + years old (nunca I have … years); cumpleaños con It's on + mes con mayúscula + día ordinal (1st, 2nd, 3rd, 26th…); maestro con Mr./Mrs./Miss. Los números pueden ir en cifra.",
+      ejemplo: ["What's your name? → My name's Gaby.", "When's your birthday? → It's on February 26th."],
+      filas: [
+        "What's your name?",
+        "What's your last name?",
+        "What's your address?",
+        "How are you?",
+        "How old are you?",
+        "When's your birthday?",
+        "Who's your teacher?",
+      ],
+      columnas: [
+        { k: "yo", nombre: "Tu respuesta", ph: "Tu respuesta completa" },
+        { k: "fam", nombre: "Respuesta de un familiar", ph: "Lo que contestó tu familiar" },
+      ],
+    },
+  },
 ];
 
 window.TEMAS = [
   {
     id: "peliculas",
     mas: [
+      {
+        desdeLeccion: 4,
+        frases: [
+          { en: "{w|Who}'{v|s} your favorite actor? My favorite actor {v|is} Tom Hanks.", es: "¿Quién es tu actor favorito? Mi actor favorito es Tom Hanks." },
+          { en: "{w|Who} {v|is} Iron Man? {p|He} {v|is} Tony Stark.", es: "¿Quién es Iron Man? Es Tony Stark." },
+          { en: "{w|What}'{v|s} your favorite movie? {p|It}'{v|s} Toy Story.", es: "¿Cuál es tu película favorita? Es Toy Story." },
+          { en: "{w|Where} {v|is} Woody? {p|He} {v|is} in Andy's house.", es: "¿Dónde está Woody? Está en la casa de Andy." },
+        ],
+        ejercicios: [
+          { tipo: "escribir", id: "tpe8", tag: "wh", pregunta: "Traduce: **¿Quién es Iron Man?**", respuestas: ["who is iron man", "who's iron man"], mostrar: "Who is Iron Man?", pista: "Quién = who.", explicacion: "*Who is Iron Man?* o *Who's Iron Man?*" },
+          { tipo: "opcion", id: "tpe9", tag: "wh", pregunta: "What's your favorite movie?", opciones: ["Yes, it is.", "It's Toy Story.", "He is Woody."], correcta: 1, pista: "Te piden información, no sí o no.", explicacion: "Las Wh- questions se contestan con la información: *It's Toy Story.*" },
+        ],
+      },
       {
         desdeLeccion: 3,
         frases: [
@@ -882,6 +1160,19 @@ window.TEMAS = [
     id: "comics",
     mas: [
       {
+        desdeLeccion: 4,
+        frases: [
+          { en: "{w|Who} {v|is} Batman? {p|He} {v|is} Bruce Wayne.", es: "¿Quién es Batman? Es Bruce Wayne." },
+          { en: "{w|Who} {v|is} Spider-Man? {p|He} {v|is} Peter Parker.", es: "¿Quién es Spider-Man? Es Peter Parker." },
+          { en: "{w|Where} {v|is} Superman? {p|He} {v|is} in Metropolis.", es: "¿Dónde está Superman? Está en Metrópolis." },
+          { en: "{w|How} old {v|is} Peter Parker? {p|He}'{v|s} sixteen years old.", es: "¿Cuántos años tiene Peter Parker? Tiene 16 años." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tco8", tag: "wh", pregunta: "Where is Superman?", opciones: ["He is Clark Kent.", "He is in Metropolis.", "Yes, he is."], correcta: 1, pista: "where = dónde: te preguntan un lugar.", explicacion: "*He is in Metropolis.* **Where** pide un lugar." },
+          { tipo: "escribir", id: "tco9", tag: "wh", pregunta: "Traduce: **¿Quién es Batman?**", respuestas: ["who is batman", "who's batman"], mostrar: "Who is Batman?", pista: "Quién = who.", explicacion: "*Who is Batman?* — *He is Bruce Wayne.*" },
+        ],
+      },
+      {
         desdeLeccion: 3,
         frases: [
           { en: "Batman {v|is} {w|loyal} to Gotham.", es: "Batman es leal a Gotham." },
@@ -936,6 +1227,19 @@ window.TEMAS = [
     id: "musica",
     mas: [
       {
+        desdeLeccion: 4,
+        frases: [
+          { en: "{w|Who}'{v|s} your favorite singer?", es: "¿Quién es tu cantante favorito?" },
+          { en: "{w|What}'{v|s} your favorite song?", es: "¿Cuál es tu canción favorita?" },
+          { en: "{w|Where} {v|is} the concert? {p|It}'{v|s} in the park.", es: "¿Dónde es el concierto? Es en el parque." },
+          { en: "{w|When} {v|is} the concert? {p|It}'{v|s} on May 5th.", es: "¿Cuándo es el concierto? Es el 5 de mayo." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tmu8", tag: "wh", pregunta: "When is the concert?", opciones: ["It's in the park.", "It's on May 5th.", "It's a band."], correcta: 1, pista: "when = cuándo: te preguntan una fecha.", explicacion: "*It's on May 5th.* **When** pide una fecha; con mes y día se usa **on**." },
+          { tipo: "escribir", id: "tmu9", tag: "wh", pregunta: "Traduce: **¿Cuál es tu canción favorita?**", respuestas: ["what is your favorite song", "what's your favorite song", "what is your favourite song", "what's your favourite song"], mostrar: "What's your favorite song?", pista: "Cuál = what (como en What's your name?).", explicacion: "*What's your favorite song?* Aquí **what** = cuál." },
+        ],
+      },
+      {
         desdeLeccion: 3,
         frases: [
           { en: "Bad Bunny {v|is} very {w|popular}.", es: "Bad Bunny es muy popular." },
@@ -988,6 +1292,20 @@ window.TEMAS = [
   {
     id: "fe",
     mas: [
+      {
+        desdeLeccion: 4,
+        nota: "En Éxodo 3:13-14 Moisés le pregunta a Dios su nombre, y Dios responde con el verbo que ya conoces: **I AM**.",
+        frases: [
+          { en: "Moses: «{w|What} {v|is} his {w|name}?»", es: "Moisés: «¿Cuál es su nombre?» (Éxodo 3:13)" },
+          { en: "God: «{p|I} {v|AM} WHO {p|I} {v|AM}.»", es: "Dios: «YO SOY EL QUE SOY». (Éxodo 3:14)" },
+          { en: "{w|Who} {v|is} the Lord? {p|He} {v|is} my shepherd.", es: "¿Quién es el Señor? Es mi pastor." },
+          { en: "{w|When} {v|is} Christmas? {p|It}'{v|s} on December 25th.", es: "¿Cuándo es Navidad? Es el 25 de diciembre." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tfe9", tag: "wh", pregunta: "*I AM WHO I AM* (Éxodo 3:14) significa…", opciones: ["Yo soy el que soy.", "¿Quién soy yo?", "Yo estoy aquí."], correcta: 0, pista: "Aquí who no es pregunta: une las dos partes.", explicacion: "*I AM WHO I AM* = YO SOY EL QUE SOY. Aquí **who** significa «el que»." },
+          { tipo: "opcion", id: "tfe10", tag: "wh", pregunta: "When is Christmas?", opciones: ["It's on December 25th.", "It's in the church.", "He is Jesus."], correcta: 0, pista: "when = cuándo.", explicacion: "*It's on December 25th.* = Es el 25 de diciembre." },
+        ],
+      },
       {
         desdeLeccion: 3,
         nota: "**faithful** (fiel) se parece a **loyal** (leal). En la Biblia en inglés, para Dios se usa casi siempre *faithful*.",
@@ -1054,6 +1372,20 @@ window.TEMAS = [
   {
     id: "trabajo",
     mas: [
+      {
+        desdeLeccion: 4,
+        nota: "En una entrevista o en la recepción de una oficina puedes contestar solo el dato: *What's your last name?* → *García.*",
+        frases: [
+          { en: "{w|What}'{v|s} your last name? García.", es: "¿Cuál es su apellido? García." },
+          { en: "{w|What}'{v|s} your address? {p|It}'{v|s} 120 Main Street.", es: "¿Cuál es su dirección? Es Calle Principal 120." },
+          { en: "{w|Who}'{v|s} your manager? {p|She}'{v|s} Mrs. Ruiz.", es: "¿Quién es su gerente? Es la señora Ruiz." },
+          { en: "{w|Where} {v|is} the meeting? {p|It}'{v|s} in the office.", es: "¿Dónde es la junta? Es en la oficina." },
+        ],
+        ejercicios: [
+          { tipo: "escribir", id: "ttr8", tag: "wh", pregunta: "Traduce: **¿Quién es su gerente?**", respuestas: ["who is your manager", "who's your manager"], mostrar: "Who's your manager?", pista: "Quién = who. Gerente = manager.", explicacion: "*Who's your manager?* **your** sirve para «tu» y «su (de usted)»." },
+          { tipo: "opcion", id: "ttr9", tag: "wh", pregunta: "Where is the meeting?", opciones: ["It's in the office.", "It's Mrs. Ruiz.", "It's on May 5th."], correcta: 0, pista: "where = dónde.", explicacion: "*It's in the office.* **Where** pide un lugar." },
+        ],
+      },
       {
         desdeLeccion: 3,
         frases: [

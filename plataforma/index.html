@@ -319,7 +319,7 @@ tr:last-child td { border-bottom: 0; }
   function norm(s) {
     let x = String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’‘`´]/g, "'");
     const contr = [[/\bi'm\b/g, "i am"], [/\byou're\b/g, "you are"], [/\bwe're\b/g, "we are"], [/\bthey're\b/g, "they are"],
-      [/\b(he|she|it)'s\b/g, "$1 is"], [/\bisn't\b/g, "is not"], [/\baren't\b/g, "are not"]];
+      [/\b(he|she|it|what|who|when|where|how|that|name)'s\b/g, "$1 is"], [/\bisn't\b/g, "is not"], [/\baren't\b/g, "are not"]];
     for (const [r, v] of contr) x = x.replace(r, v);
     return x.replace(/[.,!?¿¡;:"()]/g, " ").replace(/\s+/g, " ").trim();
   }
@@ -356,7 +356,7 @@ tr:last-child td { border-bottom: 0; }
     for (const e of pt.ejercicios || []) EJMAP["e:" + e.id] = e;
     for (const e of pt.dialogo?.preguntas || []) EJMAP["e:" + e.id] = e;
   }
-  const TAGS = { pronombres: "Pronombres", "to-be": "Verbo to be (am, is, are)", afirmativas: "Oraciones afirmativas", negativas: "Oraciones negativas", "a-an": "A / An", preguntas: "Preguntas y respuestas", adjetivos: "Adjetivos (cómo es alguien)", vocabulario: "Vocabulario", escucha: "Comprensión auditiva", dictado: "Dictado" };
+  const TAGS = { pronombres: "Pronombres", "to-be": "Verbo to be (am, is, are)", afirmativas: "Oraciones afirmativas", negativas: "Oraciones negativas", "a-an": "A / An", preguntas: "Preguntas y respuestas", adjetivos: "Adjetivos (cómo es alguien)", wh: "Preguntas con What, Who, Where…", vocabulario: "Vocabulario", escucha: "Comprensión auditiva", dictado: "Dictado" };
 
   /* ---------- progreso y guardado ---------- */
   const CLAVE = "pizarron-ingles-v1";
