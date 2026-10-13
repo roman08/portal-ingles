@@ -1,6 +1,6 @@
 // Service worker: guarda la app para usarla sin internet.
-// 20261013150158 lo reemplaza construir-netlify.sh en cada publicación, así el teléfono descarga la versión nueva.
-const VERSION = "20261013150158";
+// 20261013151254 lo reemplaza construir-netlify.sh en cada publicación, así el teléfono descarga la versión nueva.
+const VERSION = "20261013151254";
 const CACHE = "pizarron-" + VERSION;
 const FUENTES = "pizarron-fuentes";
 const BASE = [

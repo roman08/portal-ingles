@@ -159,7 +159,7 @@ main { display: grid; gap: 22px; min-width: 0; }
 .voc b { display: block; }
 .voc small { color: var(--muted); }
 .tarea-grid { display: grid; gap: 10px; }
-.tarea-fila { display: grid; grid-template-columns: minmax(90px, 180px) 1fr 1fr; gap: 8px; align-items: center; }
+.tarea-fila { display: grid; grid-template-columns: minmax(90px, 180px) repeat(var(--cols, 2), minmax(0, 1fr)); gap: 8px; align-items: center; }
 .tarea-fila label.pr { font-weight: 700; color: var(--pro); }
 .campo { width: 100%; border: 2px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 12px; padding: 12px 14px; font: inherit; font-size: 1.05rem; min-height: 48px; }
 .campo:focus { outline: none; border-color: var(--pro); }
@@ -285,7 +285,7 @@ tr:last-child td { border-bottom: 0; }
 @media (max-width: 520px) {
   h1 { font-size: 1.5rem; }
   .stat b { font-size: 1.35rem; }
-  .tarea-fila { grid-template-columns: 1fr 1fr; }
+  .tarea-fila { grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr)); }
   .tarea-fila label.pr { grid-column: 1 / -1; }
   .pregunta { font-size: 1.22rem; }
   .t-en { font-size: 2rem; }
@@ -377,14 +377,15 @@ tr:last-child td { border-bottom: 0; }
   }
   // Un tema crece con las clases: la parte base más las partes de `mas`, cada una desde cierta lección.
   function partesTema(t) {
-    return [{ desdeLeccion: t.desdeLeccion, nota: t.nota, vocabulario: t.vocabulario, frases: t.frases, ejercicios: t.ejercicios, dialogo: t.dialogo }, ...(t.mas || [])];
+    return [{ desdeLeccion: t.desdeLeccion, nota: t.nota, vocabulario: t.vocabulario, frases: t.frases, ejercicios: t.ejercicios, dialogo: t.dialogo }, ...(t.mas || [])]
+      .sort((a, b) => a.desdeLeccion - b.desdeLeccion);
   }
   for (const t of TEM) for (const pt of partesTema(t)) {
     for (const v of pt.vocabulario || []) { const x = { key: `v:t:${t.id}:${v.id}`, v, origen: t.titulo, tema: t.id, desde: pt.desdeLeccion }; VOC.push(x); VOCMAP[x.key] = x; }
     for (const e of pt.ejercicios || []) EJMAP["e:" + e.id] = e;
     for (const e of pt.dialogo?.preguntas || []) EJMAP["e:" + e.id] = e;
   }
-  const TAGS = { pronombres: "Pronombres", "to-be": "Verbo to be (am, is, are)", afirmativas: "Oraciones afirmativas", negativas: "Oraciones negativas", "a-an": "A / An", preguntas: "Preguntas y respuestas", vocabulario: "Vocabulario", escucha: "Comprensión auditiva", dictado: "Dictado" };
+  const TAGS = { pronombres: "Pronombres", "to-be": "Verbo to be (am, is, are)", afirmativas: "Oraciones afirmativas", negativas: "Oraciones negativas", "a-an": "A / An", preguntas: "Preguntas y respuestas", adjetivos: "Adjetivos (cómo es alguien)", vocabulario: "Vocabulario", escucha: "Comprensión auditiva", dictado: "Dictado" };
 
   /* ---------- progreso y guardado ---------- */
   const CLAVE = "pizarron-ingles-v1";
@@ -951,7 +952,7 @@ tr:last-child td { border-bottom: 0; }
         <div class="vocab-grid">${l.vocabulario.map(v => `<div class="voc"><span style="font-size:1.3rem">${v.emoji}</span><div><b>${esc(v.en)}</b><small>${esc(v.es)}</small></div><button class="audio" data-say="${esc(v.en)}" aria-label="Escuchar ${esc(v.en)}" style="margin-left:auto">🔊</button></div>`).join("")}</div></section>
       <section class="card seccion" id="tarea"><h2>📝 Tarea de la clase</h2><p>${md(l.tarea.instrucciones)}</p>
         <div class="ejemplo-box"><span class="eyebrow">Ejemplo</span>${l.tarea.ejemplo.map(x => `<span class="marker">${esc(x)}</span>`).join("")}</div>
-        <div class="tarea-grid">${l.tarea.filas.map((fila, i) => `<div class="tarea-fila"><label class="pr" for="t-${l.id}-${i}-${l.tarea.columnas[0].k}">${esc(fila)}</label>
+        <div class="tarea-grid">${l.tarea.filas.map((fila, i) => `<div class="tarea-fila" style="--cols:${l.tarea.columnas.length}"><label class="pr" for="t-${l.id}-${i}-${l.tarea.columnas[0].k}">${esc(fila)}</label>
           ${l.tarea.columnas.map(col => `<input class="campo tarea-campo" id="t-${l.id}-${i}-${col.k}" data-lec="${l.id}" data-k="${i}-${col.k}" placeholder="${esc(col.ph)}" value="${esc(resp[i + "-" + col.k] || "")}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${esc(fila)} · ${esc(col.nombre)}">`).join("")}</div>`).join("")}</div>
         <button class="btn btn-primario btn-grande" data-a="revisar" data-lec="${l.id}">✔ Terminé, revisar mi tarea</button>
         <div id="tarea-out">${t.revision ? revisionHTML(t.revision, t.enviadas || {}) : ""}</div></section>`;

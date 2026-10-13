@@ -15,7 +15,6 @@ window.LECCIONES = [
     numero: 1,
     titulo: "Pronombres personales y el verbo To Be",
     maestra: "Teacher Gaby Manzano",
-    video: "https://www.youtube.com/watch?v=mOGlttBHvHI",
     resumen:
       "Los 8 pronombres personales, las 3 formas del verbo to be (am, is, are) y cómo hacer oraciones afirmativas y negativas.",
 
@@ -261,7 +260,6 @@ window.LECCIONES = [
     numero: 2,
     titulo: "A / An, profesiones y preguntas con To Be",
     maestra: "Teacher Gaby Manzano",
-    video: null,
     resumen:
       "Cómo organizar tu cuaderno, las palabras parecidas al español, a y an (un / una), 24 profesiones, y cómo hacer preguntas con el verbo to be y contestarlas.",
 
@@ -557,12 +555,280 @@ window.LECCIONES = [
       ],
     },
   },
+
+  {
+    id: "l3",
+    numero: 3,
+    titulo: "Repaso y palabras para describir personas",
+    maestra: "Teacher Gaby Manzano",
+    resumen:
+      "Repaso de afirmativas, negativas, preguntas y respuestas cortas con contracciones; 10 adjetivos para describir personas; palabras parecidas y «falsas amigas»; y tu primer párrafo en inglés.",
+
+    pasos: [
+      {
+        id: "l3p1",
+        titulo: "Repaso: oraciones, preguntas y contracciones",
+        emoji: "🔄",
+        teoria: [
+          { t: "p", x: "La maestra empezó con un mensaje: **la clave del éxito es la constancia**. Nadie aprende algo escuchándolo una sola vez: hay que escucharlo, escribirlo y practicarlo. Esta clase es justo para practicar." },
+          { t: "p", x: "Ya sabes hacer los tres tipos de oración con el verbo to be:" },
+          {
+            t: "tabla",
+            cab: ["Tipo", "Cómo se arma", "Ejemplo"],
+            filas: [
+              ["Afirmativa", "{p|sujeto} + {v|verbo}", "{p|She} {v|is} a nurse."],
+              ["Negativa", "{p|sujeto} + {v|verbo} + {n|not}", "{p|She} {v|is} {n|not} a nurse."],
+              ["Pregunta", "{v|verbo} + {p|sujeto} … ?", "{v|Is} {p|she} a nurse?"],
+            ],
+          },
+          { t: "p", x: "Las **contracciones** juntan dos palabras en una con un apóstrofo ( ' ). Significan exactamente lo mismo:" },
+          {
+            t: "tabla",
+            cab: ["Completa", "Contracción", "Completa", "Contracción"],
+            filas: [
+              ["{p|I} {v|am}", "{p|I}'{v|m}", "{v|is} {n|not}", "{v|is}{n|n't}"],
+              ["{p|he} {v|is}", "{p|he}'{v|s}", "{v|are} {n|not}", "{v|are}{n|n't}"],
+              ["{p|she} {v|is}", "{p|she}'{v|s}", "", ""],
+              ["{p|it} {v|is}", "{p|it}'{v|s}", "", ""],
+              ["{p|we} {v|are}", "{p|we}'{v|re}", "", ""],
+              ["{p|you} {v|are}", "{p|you}'{v|re}", "", ""],
+              ["{p|they} {v|are}", "{p|they}'{v|re}", "", ""],
+            ],
+          },
+          { t: "regla", x: "Respuesta corta con **sí** → sin contracción · con **no** → puedes usar contracción" },
+          {
+            t: "ejemplos",
+            items: [
+              { en: "{v|Is} Louis a doctor? — Yes, {p|he} {v|is}.", es: "¿Louis es doctor? — Sí, lo es. (nunca «Yes, he's»)" },
+              { en: "{v|Is} Louis a doctor? — No, {p|he} {v|is}{n|n't}.", es: "¿Louis es doctor? — No, no lo es." },
+              { en: "{v|Is} {p|she} a nurse? — No, {p|she} {v|is}{n|n't}.", es: "¿Ella es enfermera? — No, no lo es." },
+            ],
+          },
+          { t: "p", x: "**En plural.** Si alguien dice *We are students* (somos estudiantes), la otra persona no pregunta «Are we students?», sino ***Are you students?*** (¿Ustedes son estudiantes?). Y ustedes contestan con **we**:" },
+          {
+            t: "ejemplos",
+            items: [
+              { en: "{p|We}'{v|re} students. — {v|Are} {p|you} students?", es: "Somos estudiantes. — ¿Ustedes son estudiantes?" },
+              { en: "Yes, {p|we} {v|are}.", es: "Sí, lo somos." },
+              { en: "No, {p|we} {v|are}{n|n't}.", es: "No, no lo somos." },
+            ],
+          },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l3e01", tag: "preguntas", pregunta: "Is Louis a doctor? (Contesta que **sí**)", opciones: ["Yes, he's.", "Yes, he is.", "Yes, he isn't."], correcta: 1, pista: "En el «sí» no se usa contracción.", explicacion: "*Yes, he is.* La contracción solo se usa en la respuesta con «no»: *No, he isn't*." },
+          { tipo: "escribir", id: "l3e02", tag: "preguntas", pregunta: "Contesta que **no** usando contracción: Is she a nurse?", respuestas: ["no she isn't", "no she's not"], mostrar: "No, she isn't.", pista: "is + not = isn't", explicacion: "*No, she isn't.* También se acepta *No, she's not*." },
+          { tipo: "opcion", id: "l3e03", tag: "preguntas", pregunta: "Te dicen: *We are students.* ¿Qué pregunta haces?", opciones: ["Are we students?", "Are you students?", "Are they students?"], correcta: 1, pista: "Les hablas a ellos: «¿Ustedes son…?».", explicacion: "*Are you students?* = ¿Ustedes son estudiantes? Les preguntas a quienes te hablan." },
+          { tipo: "opcion", id: "l3e04", tag: "preguntas", pregunta: "Are you students? (Ustedes. Contesta que **no**)", opciones: ["No, you aren't.", "No, we aren't.", "No, we're."], correcta: 1, pista: "Contestas por ti y tus compañeros: «nosotros».", explicacion: "*No, we aren't.* = No, no lo somos." },
+          { tipo: "escribir", id: "l3e05", tag: "negativas", pregunta: "Escribe la contracción de **we are**", respuestas: ["we're"], mostrar: "we're", pista: "Se quita la a de are y se pone un apóstrofo.", explicacion: "**we are → we're**. *We're students* = Somos estudiantes." },
+          { tipo: "escribir", id: "l3e06", tag: "negativas", pregunta: "Escribe la contracción de **are not**", respuestas: ["aren't"], mostrar: "aren't", pista: "La o de not se cambia por un apóstrofo.", explicacion: "**are not → aren't**. *They aren't shy.*" },
+        ],
+      },
+      {
+        id: "l3p2",
+        titulo: "Palabras para describir personas",
+        emoji: "😊",
+        teoria: [
+          { t: "p", x: "La maestra trajo una lista de **adjetivos**: palabras que dicen **cómo es** alguien. Van después del verbo to be: *She **is** shy* (Ella es tímida)." },
+          {
+            t: "tabla",
+            cab: ["Inglés", "Suena como", "Español"],
+            filas: [
+              ["{w|loyal}", "lóyal", "leal"],
+              ["{w|fun}", "fan", "divertido / divertida"],
+              ["{w|popular}", "pópiular", "popular"],
+              ["{w|social}", "sóushal", "sociable"],
+              ["{w|considerate}", "consíderet", "considerado / considerada"],
+              ["{w|famous}", "féimos", "famoso / famosa"],
+              ["{w|shy}", "shai", "tímido / tímida"],
+              ["{w|introverted}", "íntroverted", "introvertido / introvertida"],
+              ["{w|extroverted}", "éxtroverted", "extrovertido / extrovertida"],
+              ["{w|confident}", "cónfident", "seguro de sí mismo"],
+            ],
+          },
+          { t: "tip", x: "**fun** se pronuncia casi como «fan», con la «a» un poco cerrada." },
+          { t: "tip", x: "**shy** e **introverted** son sinónimos (significan casi lo mismo). **extroverted** es lo contrario." },
+          { t: "p", x: "Para decir **muy**, pon **very** antes del adjetivo:" },
+          { t: "regla", x: "{p|sujeto} + {v|verbo} + {w|very} + adjetivo" },
+          {
+            t: "ejemplos",
+            items: [
+              { en: "My brother {v|is} {w|popular} in the school.", es: "Mi hermano es popular en la escuela." },
+              { en: "{p|He} {v|is} {w|social}.", es: "Él es sociable." },
+              { en: "My mother {v|is} {w|considerate}.", es: "Mi mamá es considerada." },
+              { en: "{p|She} {v|is} very {w|shy}.", es: "Ella es muy tímida." },
+            ],
+          },
+          { t: "extra", x: "**fun** es divertido (algo o alguien con quien te la pasas bien). **funny** es gracioso (que te hace reír). Lo verás más adelante." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l3e07", tag: "adjetivos", pregunta: "**shy** significa…", opciones: ["seguro", "tímido", "famoso"], correcta: 1, pista: "Es sinónimo de introverted.", explicacion: "**shy** = tímido. Es sinónimo de **introverted**." },
+          { tipo: "opcion", id: "l3e08", tag: "adjetivos", pregunta: "¿Cómo se dice **leal**?", opciones: ["loyal", "fun", "social"], correcta: 0, pista: "Suena como «lóyal».", explicacion: "**loyal** = leal. *He is loyal to his company* = Es leal a su compañía." },
+          { tipo: "opcion", id: "l3e09", tag: "adjetivos", pregunta: "Lo contrario de **introverted** es…", opciones: ["shy", "extroverted", "considerate"], correcta: 1, pista: "intro = hacia adentro, extro = hacia afuera.", explicacion: "**extroverted** (extrovertido) es lo contrario de **introverted** (introvertido)." },
+          { tipo: "escribir", id: "l3e10", tag: "adjetivos", pregunta: "Traduce: **Ella es muy tímida.**", respuestas: ["she is very shy", "she's very shy"], mostrar: "She is very shy.", pista: "very va antes del adjetivo.", explicacion: "*She is very shy.* **very** (muy) va antes de **shy**." },
+          { tipo: "ordenar", id: "l3e11", tag: "adjetivos", pregunta: "Ordena: **Mi hermano es popular en la escuela.**", palabras: ["My brother", "is", "popular", "in", "the", "school"], pista: "Sujeto + verbo + adjetivo + lugar.", explicacion: "*My brother is popular in the school.* El ejemplo de la maestra." },
+          { tipo: "opcion", id: "l3e12", tag: "adjetivos", pregunta: "**fun** significa…", opciones: ["divertido", "fanático", "famoso"], correcta: 0, pista: "Suena como «fan», pero no significa fan.", explicacion: "**fun** = divertido. *The class is fun* = La clase es divertida." },
+        ],
+      },
+      {
+        id: "l3p3",
+        titulo: "Palabras parecidas y falsas amigas",
+        emoji: "🎭",
+        teoria: [
+          { t: "p", x: "Las palabras que se escriben igual o casi igual en inglés y en español se llaman **cognados** (*cognates*). Hay de dos tipos:" },
+          {
+            t: "tabla",
+            cab: ["Tipo", "Qué son", "Ejemplos"],
+            filas: [
+              ["✅ Cognado verdadero", "Se parecen **y** significan lo mismo", "{w|popular} = popular · {w|social} = sociable · {w|considerate} = considerado"],
+              ["⚠️ Cognado falso", "Se parecen **pero** significan otra cosa", "{w|confident} ≠ confidente"],
+            ],
+          },
+          { t: "tip", x: "**confident** no es «confidente» (la persona a la que le cuentas secretos). Significa **seguro de sí mismo**, alguien que tiene confianza en sí mismo: *She is confident* = Ella es segura de sí misma." },
+          { t: "p", x: "Truco: muchas palabras que en español terminan en **-oso** terminan en inglés en **-ous**: famoso → **famous**." },
+          { t: "p", x: "**Los adjetivos en inglés no cambian.** No tienen masculino, femenino ni plural. En español decimos famoso, famosa, famosos, famosas; en inglés siempre es **famous**:" },
+          {
+            t: "ejemplos",
+            items: [
+              { en: "Billie Eilish {v|is} {w|famous}.", es: "Billie Eilish es famosa." },
+              { en: "The Jonas Brothers {v|are} {w|famous}.", es: "Los Jonas Brothers son famosos." },
+              { en: "{p|He} {v|is} {w|shy}. {p|They} {v|are} {w|shy}.", es: "Él es tímido. Ellos son tímidos." },
+            ],
+          },
+          { t: "tip", x: "Esto hace el inglés más fácil que el español: aprendes la palabra una sola vez y te sirve para todos." },
+          { t: "extra", x: "Más palabras -oso → -ous: nervioso → **nervous**, generoso → **generous**, delicioso → **delicious**." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "l3e13", tag: "adjetivos", pregunta: "*She is confident* significa…", opciones: ["Ella es mi confidente.", "Ella es segura de sí misma.", "Ella es confiable."], correcta: 1, pista: "Es un cognado falso.", explicacion: "**confident** = seguro de sí mismo. No es «confidente»." },
+          { tipo: "opcion", id: "l3e14", tag: "adjetivos", pregunta: "Los Jonas Brothers son famosos: The Jonas Brothers are ___.", opciones: ["famouses", "famous", "famosos"], correcta: 1, pista: "Los adjetivos en inglés no tienen plural.", explicacion: "*The Jonas Brothers are famous.* Los adjetivos no cambian en plural." },
+          { tipo: "opcion", id: "l3e15", tag: "adjetivos", pregunta: "¿Cuál es un **cognado falso**?", opciones: ["popular", "social", "confident"], correcta: 2, pista: "Es la que se parece a una palabra en español pero significa otra cosa.", explicacion: "**confident** parece «confidente», pero significa «seguro de sí mismo»." },
+          { tipo: "escribir", id: "l3e16", tag: "adjetivos", pregunta: "Traduce: **Ellas son famosas.**", respuestas: ["they are famous", "they're famous"], mostrar: "They are famous.", pista: "famous no cambia para femenino ni plural.", explicacion: "*They are famous.* Igual para ellos, ellas, él o ella." },
+          { tipo: "escribir", id: "l3e17", tag: "adjetivos", pregunta: "¿Cómo se dice **famoso** en inglés?", respuestas: ["famous"], mostrar: "famous", pista: "-oso se convierte en -ous.", explicacion: "famoso → **famous**. La terminación -oso cambia a -ous." },
+        ],
+      },
+      {
+        id: "l3p4",
+        titulo: "Tu primer párrafo",
+        emoji: "✍️",
+        teoria: [
+          { t: "p", x: "Con lo que ya sabes puedes juntar varias oraciones y formar un **párrafo**. La maestra escribió este sobre un actor; tú puedes poner el nombre que quieras:" },
+          {
+            t: "ejemplos",
+            items: [
+              { en: "Brad Pitt {v|is} an actor.", es: "Brad Pitt es actor." },
+              { en: "{p|He} {v|is} very {w|famous}.", es: "Es muy famoso." },
+              { en: "{p|He} {v|is} very {w|extroverted}.", es: "Es muy extrovertido." },
+              { en: "{p|He} {v|is} {n|not} {w|shy}.", es: "No es tímido." },
+              { en: "{p|He} {v|is} {w|loyal} to his company.", es: "Es leal a su compañía." },
+            ],
+          },
+          { t: "tip", x: "**loyal to** = leal a. La maestra lo explicó así: si un actor trabaja para Warner Brothers y no hace películas en ningún otro lado, *he is loyal to his company*." },
+          { t: "tip", x: "**his** = su (de él). *his company* = su compañía. Para una mujer se usa **her**: *She is loyal to her company*." },
+          { t: "p", x: "Así, poco a poco, vas a poder leer y entender párrafos completos." },
+          { t: "tip", x: "Consejo de la maestra: **mira programas en inglés**, aunque sea con subtítulos, y trata de «pescar» palabras que ya conoces. Así practicas también el oído, no solo leer y escribir." },
+        ],
+        ejercicios: [
+          { tipo: "ordenar", id: "l3e18", tag: "adjetivos", pregunta: "Ordena: **Él es muy famoso.**", palabras: ["He", "is", "very", "famous"], pista: "very va antes del adjetivo.", explicacion: "*He is very famous.*" },
+          { tipo: "escribir", id: "l3e19", tag: "negativas", pregunta: "Traduce: **Ella no es tímida.**", respuestas: ["she is not shy", "she isn't shy", "she's not shy"], mostrar: "She is not shy.", pista: "not va después de is.", explicacion: "*She is not shy.* También: *She isn't shy*." },
+          { tipo: "opcion", id: "l3e20", tag: "adjetivos", pregunta: "*He is loyal to his company* significa…", opciones: ["Él es leal a su compañía.", "Él está en su compañía.", "Él es dueño de su compañía."], correcta: 0, pista: "loyal = leal.", explicacion: "**loyal to** = leal a. **his company** = su compañía." },
+          { tipo: "escribir", id: "l3e21", tag: "preguntas", pregunta: "Convierte en pregunta: **He is very famous.**", respuestas: ["is he very famous"], mostrar: "Is he very famous?", pista: "Pasa is al principio.", explicacion: "*Is he very famous?* = ¿Él es muy famoso?" },
+          { tipo: "opcion", id: "l3e22", tag: "adjetivos", pregunta: "Ella es leal a **su** compañía: She is loyal to ___ company.", opciones: ["his", "her"], correcta: 1, pista: "Es la compañía de ella.", explicacion: "*She is loyal to **her** company.* **his** es de él, **her** es de ella." },
+        ],
+      },
+    ],
+
+    vocabulario: [
+      { id: "loyal", en: "loyal", es: "leal", pron: "lóyal", emoji: "🤝", ej: "{p|He} {v|is} loyal to his company.", ejEs: "Él es leal a su compañía." },
+      { id: "fun", en: "fun", es: "divertido / divertida", pron: "fan", emoji: "🎉", ej: "The class {v|is} fun.", ejEs: "La clase es divertida." },
+      { id: "popular", en: "popular", es: "popular", pron: "pópiular", emoji: "🌟", ej: "My brother {v|is} popular in the school.", ejEs: "Mi hermano es popular en la escuela." },
+      { id: "social", en: "social", es: "sociable", pron: "sóushal", emoji: "🗣️", ej: "{p|He} {v|is} social.", ejEs: "Él es sociable." },
+      { id: "considerate", en: "considerate", es: "considerado / considerada", pron: "consíderet", emoji: "💝", ej: "My mother {v|is} considerate.", ejEs: "Mi mamá es considerada." },
+      { id: "famous", en: "famous", es: "famoso / famosa", pron: "féimos", emoji: "📸", ej: "{p|He} {v|is} very famous.", ejEs: "Él es muy famoso." },
+      { id: "shy", en: "shy", es: "tímido / tímida", pron: "shai", emoji: "🙈", ej: "{p|She} {v|is} {n|not} shy.", ejEs: "Ella no es tímida." },
+      { id: "introverted", en: "introverted", es: "introvertido / introvertida", pron: "íntroverted", emoji: "📖", ej: "{p|I} {v|am} introverted.", ejEs: "Soy introvertido." },
+      { id: "extroverted", en: "extroverted", es: "extrovertido / extrovertida", pron: "éxtroverted", emoji: "🥳", ej: "{p|He} {v|is} very extroverted.", ejEs: "Él es muy extrovertido." },
+      { id: "confident", en: "confident", es: "seguro de sí mismo", pron: "cónfident", emoji: "😎", ej: "{p|She} {v|is} confident.", ejEs: "Ella es segura de sí misma." },
+      { id: "very", en: "very", es: "muy", pron: "véri", emoji: "➕", ej: "{p|He} {v|is} very famous.", ejEs: "Él es muy famoso." },
+      { id: "mother", en: "mother", es: "mamá / madre", pron: "móder", emoji: "👩‍👧", ej: "My mother {v|is} considerate.", ejEs: "Mi mamá es considerada." },
+      { id: "his", en: "his", es: "su (de él)", pron: "jis", emoji: "👨", ej: "{p|He} {v|is} loyal to his company.", ejEs: "Él es leal a su compañía." },
+      { id: "her", en: "her", es: "su (de ella)", pron: "jer", emoji: "👩", ej: "{p|She} {v|is} loyal to her company.", ejEs: "Ella es leal a su compañía." },
+    ],
+
+    escuchar: {
+      dictado: [
+        { en: "He is very famous.", es: "Él es muy famoso." },
+        { en: "She is not shy.", es: "Ella no es tímida." },
+        { en: "Are you students?", es: "¿Ustedes son estudiantes?" },
+        { en: "Yes, we are.", es: "Sí, lo somos." },
+        { en: "No, she isn't.", es: "No, ella no lo es." },
+        { en: "He is loyal to his company.", es: "Él es leal a su compañía." },
+        { en: "My brother is popular in the school.", es: "Mi hermano es popular en la escuela." },
+        { en: "My mother is considerate.", es: "Mi mamá es considerada." },
+        { en: "They are very fun.", es: "Ellos son muy divertidos." },
+      ],
+      pronunciar: [
+        { en: "{p|He} {v|is} very famous.", pron: "ji is véri féimos", es: "Él es muy famoso." },
+        { en: "{p|She} {v|is} confident.", pron: "shi is cónfident", es: "Ella es segura de sí misma." },
+        { en: "No, {p|we} {v|are}{n|n't}.", pron: "nou, ui árent", es: "No, no lo somos." },
+        { en: "My mother {v|is} considerate.", pron: "mai móder is consíderet", es: "Mi mamá es considerada." },
+        { en: "{p|He} {v|is} extroverted.", pron: "ji is éxtroverted", es: "Él es extrovertido." },
+        { en: "{p|They} {v|are} loyal.", pron: "dei ar lóyal", es: "Ellos son leales." },
+      ],
+      dialogo: {
+        titulo: "Mi actor favorito",
+        lineas: [
+          { quien: "Ana", en: "{v|Is} Tom Holland an actor?", es: "¿Tom Holland es actor?" },
+          { quien: "Luis", en: "Yes, {p|he} {v|is}. {p|He} {v|is} very famous.", es: "Sí, lo es. Es muy famoso." },
+          { quien: "Ana", en: "{v|Is} {p|he} shy?", es: "¿Es tímido?" },
+          { quien: "Luis", en: "No, {p|he} {v|is}{n|n't}. {p|He} {v|is} extroverted and fun.", es: "No, no lo es. Es extrovertido y divertido." },
+          { quien: "Ana", en: "{v|Are} {p|you} a fan?", es: "¿Eres fan?" },
+          { quien: "Luis", en: "Yes, {p|I} {v|am}!", es: "¡Sí, lo soy!" },
+        ],
+        nuevas: [{ en: "and", es: "y" }, { en: "fan", es: "fan, admirador" }],
+        preguntas: [
+          { tipo: "opcion", id: "l3d1", tag: "escucha", pregunta: "Según Luis, ¿Tom Holland es tímido?", opciones: ["Sí, es tímido.", "No, es extrovertido y divertido.", "No, es considerado."], correcta: 1, pista: "Escucha lo que dice Luis después de «No, he isn't».", explicacion: "*No, he isn't. He is extroverted and fun.* = No. Es extrovertido y divertido." },
+          { tipo: "opcion", id: "l3d2", tag: "escucha", pregunta: "¿Luis es fan de Tom Holland?", opciones: ["Sí", "No", "No lo dice"], correcta: 0, pista: "Escucha la última línea.", explicacion: "Ana pregunta *Are you a fan?* y Luis contesta *Yes, I am!*" },
+        ],
+      },
+    },
+
+    tarea: {
+      instrucciones:
+        "La tarea de la maestra: escoge a un **actor o actriz famoso** (el que tú quieras) y escribe un pequeño párrafo sobre él o ella con las palabras nuevas, como el ejemplo del pizarrón. Al final, haz una pregunta sobre esa persona y contéstala con una respuesta corta.",
+      criterios:
+        "El estudiante escribe un párrafo corto sobre un actor o actriz famoso de su elección; cada renglón («fila») dice qué se pide. Revisa el verbo to be, a/an, que very vaya antes del adjetivo, que los adjetivos no tengan plural ni género (famous, nunca famouses), not después del verbo en la negativa, la pregunta con el verbo al principio y la respuesta corta (sin contracción en el «sí»). Usa he o she según la persona. Acepta extrovert/extroverted e introvert/introverted. No juzgues si lo que dice de la persona es cierto; solo revisa el inglés.",
+      ejemplo: ["Brad Pitt is an actor. He is very famous.", "He is very extroverted. He is not shy.", "He is loyal to his company."],
+      filas: [
+        "Quién es y a qué se dedica",
+        "¿Es famoso o famosa? (usa very)",
+        "¿Extrovertido o introvertido?",
+        "Algo que NO es (negativa)",
+        "¿Es leal? (loyal to…)",
+        "Otra cualidad (fun, social, confident…)",
+        "Una pregunta sobre esa persona",
+        "Contesta tu pregunta (respuesta corta)",
+      ],
+      columnas: [{ k: "txt", nombre: "Oración", ph: "Escribe tu oración en inglés" }],
+    },
+  },
 ];
 
 window.TEMAS = [
   {
     id: "peliculas",
     mas: [
+      {
+        desdeLeccion: 3,
+        frases: [
+          { en: "Tom Cruise {v|is} very {w|famous}.", es: "Tom Cruise es muy famoso." },
+          { en: "Peter Parker {v|is} {w|shy}. Spider-Man {v|is} {w|confident}.", es: "Peter Parker es tímido. Spider-Man es seguro de sí mismo." },
+          { en: "The Avengers {v|are} very {w|popular}.", es: "Los Vengadores son muy populares." },
+          { en: "{v|Is} Thanos {w|considerate}? No, {p|he} {v|is}{n|n't}.", es: "¿Thanos es considerado? No, no lo es." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tpe6", tag: "adjetivos", pregunta: "The Avengers are very ___.", opciones: ["famous", "famouses"], correcta: 0, pista: "Los adjetivos no tienen plural.", explicacion: "*The Avengers are very famous.* **famous** no cambia en plural." },
+          { tipo: "escribir", id: "tpe7", tag: "adjetivos", pregunta: "Traduce: **Spider-Man es seguro de sí mismo.**", respuestas: ["spider-man is confident", "spiderman is confident", "spider man is confident"], mostrar: "Spider-Man is confident.", pista: "Seguro de sí mismo = confident.", explicacion: "*Spider-Man is confident.* Recuerda: confident no es «confidente»." },
+        ],
+      },
       {
         desdeLeccion: 2,
         frases: [
@@ -616,6 +882,19 @@ window.TEMAS = [
     id: "comics",
     mas: [
       {
+        desdeLeccion: 3,
+        frases: [
+          { en: "Batman {v|is} {w|loyal} to Gotham.", es: "Batman es leal a Gotham." },
+          { en: "Robin {v|is} {w|loyal} to Batman.", es: "Robin es leal a Batman." },
+          { en: "The Joker {v|is} {n|not} {w|considerate}.", es: "El Guasón no es considerado." },
+          { en: "{v|Is} Superman {w|confident}? Yes, {p|he} {v|is}.", es: "¿Superman es seguro de sí mismo? Sí, lo es." },
+        ],
+        ejercicios: [
+          { tipo: "escribir", id: "tco6", tag: "preguntas", pregunta: "Contesta que **no** con contracción: Is the Joker considerate?", respuestas: ["no he isn't", "no he's not"], mostrar: "No, he isn't.", pista: "is + not = isn't", explicacion: "*No, he isn't.* En el «no» sí puedes usar contracción." },
+          { tipo: "ordenar", id: "tco7", tag: "adjetivos", pregunta: "Ordena: **Robin es leal a Batman.**", palabras: ["Robin", "is", "loyal", "to", "Batman"], pista: "loyal to = leal a.", explicacion: "*Robin is loyal to Batman.*" },
+        ],
+      },
+      {
         desdeLeccion: 2,
         frases: [
           { en: "{v|Is} Clark Kent a {w|journalist}? Yes, {p|he} {v|is}.", es: "¿Clark Kent es periodista? Sí, lo es." },
@@ -657,6 +936,19 @@ window.TEMAS = [
     id: "musica",
     mas: [
       {
+        desdeLeccion: 3,
+        frases: [
+          { en: "Bad Bunny {v|is} very {w|popular}.", es: "Bad Bunny es muy popular." },
+          { en: "The Beatles {v|are} very {w|famous}.", es: "Los Beatles son muy famosos." },
+          { en: "The music {v|is} {w|fun}!", es: "¡La música es divertida!" },
+          { en: "{v|Is} Taylor Swift {w|famous}? Yes, {p|she} {v|is}.", es: "¿Taylor Swift es famosa? Sí, lo es." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tmu6", tag: "adjetivos", pregunta: "Is Taylor Swift famous? (Contesta que **sí**)", opciones: ["Yes, she's.", "Yes, she is.", "Yes, he is."], correcta: 1, pista: "Es mujer, y en el «sí» no hay contracción.", explicacion: "*Yes, she is.* Con **she** y sin contracción." },
+          { tipo: "escribir", id: "tmu7", tag: "adjetivos", pregunta: "Traduce: **La música es divertida.**", respuestas: ["the music is fun", "music is fun"], mostrar: "The music is fun.", pista: "Divertido = fun.", explicacion: "*The music is fun.* **fun** = divertido." },
+        ],
+      },
+      {
         desdeLeccion: 2,
         frases: [
           { en: "{v|Is} Rihanna a singer? Yes, {p|she} {v|is}.", es: "¿Rihanna es cantante? Sí, lo es." },
@@ -696,6 +988,23 @@ window.TEMAS = [
   {
     id: "fe",
     mas: [
+      {
+        desdeLeccion: 3,
+        nota: "**faithful** (fiel) se parece a **loyal** (leal). En la Biblia en inglés, para Dios se usa casi siempre *faithful*.",
+        vocabulario: [
+          { id: "faithful", en: "faithful", es: "fiel", pron: "féizful", emoji: "🙏", ej: "The Lord {v|is} faithful.", ejEs: "El Señor es fiel." },
+        ],
+        frases: [
+          { en: "The Lord {v|is} {w|faithful}.", es: "El Señor es fiel. (2 Tesalonicenses 3:3)" },
+          { en: "Ruth {v|is} {w|loyal} to Naomi.", es: "Rut es leal a Noemí. (Rut 1:16)" },
+          { en: "{v|Is} God faithful? Yes, {p|He} {v|is}.", es: "¿Dios es fiel? Sí, lo es." },
+          { en: "{p|We} {v|are}{n|n't} {w|shy}. {p|We} {v|are} {w|confident}.", es: "No somos tímidos. Somos seguros." },
+        ],
+        ejercicios: [
+          { tipo: "opcion", id: "tfe7", tag: "adjetivos", pregunta: "*Ruth is loyal to Naomi* significa…", opciones: ["Rut es leal a Noemí.", "Rut está con Noemí.", "Rut es hija de Noemí."], correcta: 0, pista: "loyal = leal.", explicacion: "*Ruth is loyal to Naomi.* (Rut 1:16)" },
+          { tipo: "escribir", id: "tfe8", tag: "adjetivos", pregunta: "Traduce: **El Señor es fiel.** (fiel = faithful)", respuestas: ["the lord is faithful"], mostrar: "The Lord is faithful.", pista: "The Lord + is + faithful.", explicacion: "*The Lord is faithful.* (2 Tesalonicenses 3:3)" },
+        ],
+      },
       {
         desdeLeccion: 2,
         nota: "Al escribir sobre Dios, muchos cristianos usan **He** con mayúscula como señal de respeto.",
@@ -745,6 +1054,19 @@ window.TEMAS = [
   {
     id: "trabajo",
     mas: [
+      {
+        desdeLeccion: 3,
+        frases: [
+          { en: "My boss {v|is} {w|considerate}.", es: "Mi jefa es considerada." },
+          { en: "{p|She} {v|is} very {w|confident} in the meeting.", es: "Ella es muy segura en la junta." },
+          { en: "{p|He} {v|is} {w|loyal} to his company.", es: "Él es leal a su compañía." },
+          { en: "{v|Is} the team {w|fun}? Yes, {p|it} {v|is}.", es: "¿El equipo es divertido? Sí, lo es." },
+        ],
+        ejercicios: [
+          { tipo: "escribir", id: "ttr6", tag: "adjetivos", pregunta: "Traduce: **Mi jefa es considerada.**", respuestas: ["my boss is considerate"], mostrar: "My boss is considerate.", pista: "Jefa = boss. Considerada = considerate.", explicacion: "*My boss is considerate.* boss sirve para jefe y jefa." },
+          { tipo: "opcion", id: "ttr7", tag: "adjetivos", pregunta: "En una entrevista de trabajo quieres decir que eres **seguro de ti mismo**:", opciones: ["I am confident.", "I am a confident.", "I am confidente."], correcta: 0, pista: "Adjetivo después de am, sin a.", explicacion: "*I am confident.* Los adjetivos no llevan **a** cuando van solos." },
+        ],
+      },
       {
         desdeLeccion: 2,
         frases: [
