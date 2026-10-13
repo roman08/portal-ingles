@@ -1,0 +1,9 @@
+# Netlify publica la carpeta netlify/ tal cual; no hay paso de compilación.
+[build]
+  publish = "netlify"
+  command = ""
+
+[[headers]]
+  for = "/lecciones.js"
+  [headers.values]
+    Cache-Control = "no-cache"
