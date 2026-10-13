@@ -4,8 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="theme-color" content="#EDF1F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#13201C" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Estudia inglés con tus clases: sesión diaria, tarjetas, dictados y temas.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mi Inglés">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.pwa-aviso { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+  width: min(560px, calc(100% - 32px)); background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--shadow); padding: 12px 14px; display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size: .95rem; }
+.pwa-acc { display: flex; gap: 8px; }
+body.foco-on .pwa-aviso { display: none; }
+</style>
 </head>
 <body>
 <title>Mi Pizarrón de Inglés</title>
@@ -409,14 +428,20 @@ tr:last-child td { border-bottom: 0; }
   document.addEventListener("visibilitychange", () => { if (document.hidden && tSubir) { clearTimeout(tSubir); subir(); } });
 
   /* ---------- voz ---------- */
+  // Las voces "en línea" (Google, Natural) suenan mejor pero fallan sin internet; las locales viven en el teléfono.
   const Voz = {
-    voz: null,
+    enLinea: null,
+    local: null,
     init() {
       if (!("speechSynthesis" in window)) return;
       const elegir = () => {
-        const vs = speechSynthesis.getVoices();
-        this.voz = vs.find(v => /^en[-_]US/i.test(v.lang) && /Natural|Google|Jenny|Aria|Samantha/i.test(v.name))
-          || vs.find(v => /^en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+        const todas = speechSynthesis.getVoices();
+        const us = todas.filter(v => /^en[-_]US/i.test(v.lang));
+        const ingles = us.length ? us : todas.filter(v => /^en/i.test(v.lang));
+        const buena = v => /Natural|Google|Jenny|Aria|Samantha/i.test(v.name);
+        this.enLinea = ingles.find(buena) || ingles[0] || null;
+        const locales = ingles.filter(v => v.localService);
+        this.local = locales.find(buena) || locales[0] || null;
       };
       elegir();
       speechSynthesis.addEventListener?.("voiceschanged", elegir);
@@ -424,10 +449,14 @@ tr:last-child td { border-bottom: 0; }
     decir(texto, { lento = false, tono = 1, cola = false } = {}) {
       if (!("speechSynthesis" in window)) { aviso("Tu navegador no tiene voz disponible."); return; }
       if (!cola) speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(plano(texto));
-      u.lang = "en-US"; if (this.voz) u.voice = this.voz;
-      u.rate = lento ? 0.6 : 0.9; u.pitch = tono;
-      speechSynthesis.speak(u);
+      const hablar = voz => {
+        const u = new SpeechSynthesisUtterance(plano(texto));
+        u.lang = "en-US"; if (voz) u.voice = voz;
+        u.rate = lento ? 0.6 : 0.9; u.pitch = tono;
+        if (voz && !voz.localService) u.onerror = e => { if (e.error !== "interrupted" && e.error !== "canceled" && this.local) hablar(this.local); };
+        speechSynthesis.speak(u);
+      };
+      hablar(navigator.onLine === false ? (this.local || this.enLinea) : (this.enLinea || this.local));
     },
   };
   Voz.init();
@@ -1095,5 +1124,6 @@ ${JSON.stringify(oraciones)}`;
   conectar();
 })();
 </script>
+<script src="pwa.js"></script>
 </body>
 </html>

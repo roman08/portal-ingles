@@ -7,3 +7,14 @@
   for = "/lecciones.js"
   [headers.values]
     Cache-Control = "no-cache"
+
+# El service worker siempre debe revisarse para que el teléfono detecte versiones nuevas.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"

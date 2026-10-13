@@ -399,14 +399,20 @@ tr:last-child td { border-bottom: 0; }
   document.addEventListener("visibilitychange", () => { if (document.hidden && tSubir) { clearTimeout(tSubir); subir(); } });
 
   /* ---------- voz ---------- */
+  // Las voces "en línea" (Google, Natural) suenan mejor pero fallan sin internet; las locales viven en el teléfono.
   const Voz = {
-    voz: null,
+    enLinea: null,
+    local: null,
     init() {
       if (!("speechSynthesis" in window)) return;
       const elegir = () => {
-        const vs = speechSynthesis.getVoices();
-        this.voz = vs.find(v => /^en[-_]US/i.test(v.lang) && /Natural|Google|Jenny|Aria|Samantha/i.test(v.name))
-          || vs.find(v => /^en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+        const todas = speechSynthesis.getVoices();
+        const us = todas.filter(v => /^en[-_]US/i.test(v.lang));
+        const ingles = us.length ? us : todas.filter(v => /^en/i.test(v.lang));
+        const buena = v => /Natural|Google|Jenny|Aria|Samantha/i.test(v.name);
+        this.enLinea = ingles.find(buena) || ingles[0] || null;
+        const locales = ingles.filter(v => v.localService);
+        this.local = locales.find(buena) || locales[0] || null;
       };
       elegir();
       speechSynthesis.addEventListener?.("voiceschanged", elegir);
@@ -414,10 +420,14 @@ tr:last-child td { border-bottom: 0; }
     decir(texto, { lento = false, tono = 1, cola = false } = {}) {
       if (!("speechSynthesis" in window)) { aviso("Tu navegador no tiene voz disponible."); return; }
       if (!cola) speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(plano(texto));
-      u.lang = "en-US"; if (this.voz) u.voice = this.voz;
-      u.rate = lento ? 0.6 : 0.9; u.pitch = tono;
-      speechSynthesis.speak(u);
+      const hablar = voz => {
+        const u = new SpeechSynthesisUtterance(plano(texto));
+        u.lang = "en-US"; if (voz) u.voice = voz;
+        u.rate = lento ? 0.6 : 0.9; u.pitch = tono;
+        if (voz && !voz.localService) u.onerror = e => { if (e.error !== "interrupted" && e.error !== "canceled" && this.local) hablar(this.local); };
+        speechSynthesis.speak(u);
+      };
+      hablar(navigator.onLine === false ? (this.local || this.enLinea) : (this.enLinea || this.local));
     },
   };
   Voz.init();

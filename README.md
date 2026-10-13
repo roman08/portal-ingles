@@ -8,8 +8,14 @@ Plataforma personal para estudiar inglés con las clases de [Teacher Gaby Manzan
 |---|---|
 | `plataforma/lecciones.js` | Contenido de las lecciones y los temas. Es lo único que cambia cuando se agrega una clase. |
 | `plataforma/index.html` | La aplicación, en formato de artifact de claude.ai (sin `<head>` propio). |
-| `netlify/` | Versión lista para publicar: `index.html` completo (con meta viewport) y una copia de `lecciones.js`. |
+| `pwa/` | Piezas de la app instalable: cabecera HTML, manifest, service worker (modo sin internet), aviso de instalación e íconos. |
+| `construir-netlify.sh` | Genera `netlify/` uniendo `plataforma/` y `pwa/`. Ejecútalo después de cada cambio: `bash construir-netlify.sh`. |
+| `netlify/` | Resultado generado, listo para publicar. No se edita a mano. |
 | `netlify.toml` | Le indica a Netlify que publique la carpeta `netlify/`. |
+
+## App en el teléfono
+
+La versión de Netlify es una app web instalable (PWA). En Android, Chrome ofrece **Instalar**; en iPhone, en Safari: **Compartir → Agregar a inicio**. Después de abrirla una vez con internet, funciona sin conexión, y con conexión descarga las lecciones nuevas.
 
 ## Diferencias entre versiones
 
