@@ -2,6 +2,8 @@
 
 Plataforma personal para estudiar inglés con las clases de [Teacher Gaby Manzano](https://www.youtube.com/channel/UCdkMjTqjPcxqaUuYio7UIbw) en YouTube. Tiene una sesión diaria en modo enfoque, tarjetas con repaso inteligente, dictados, pronunciación, temas extra (películas, cómics, música, fe cristiana y trabajo) y seguimiento de progreso.
 
+La guía completa para continuar el proyecto (cómo se crean las lecciones, formato del contenido y qué se ha enseñado) está en [CLAUDE.md](CLAUDE.md).
+
 ## Estructura
 
 | Ruta | Qué es |
